@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(36, 35, 39, 0.7), rgba(36, 35, 39, 0.7)), url("fitness.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-img {
+  width: 150px;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+  transition:1s;
+}
+
+.nav-links ul {
+  list-style: none;
+}
+
+.nav-links ul li {
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+}
+.nav-links ul li::after{
+  content: '';
+  width:0%;
+  height:2px;
+  background: #fff;
+  display: block;
+  margin:auto;
+  transition:0.5s;
+
+}
+.nav-links ul li:hover::after{
+  width:100%;
+  transition:0.5s;
+}
+
+nav .logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+.text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  color: #fff;
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 60px;
+}
+
+.nav-links .fa-times {
+  display: none;
+}
+.nav-links .fa-bars {
+  display: none;
+}
+/* workouts */
+.title{
+  width:80%;
+  margin:auto;
+  text-align:center;
+  padding-top:100px;
+
+}
+
+h1{
+  font-size:36px;
+  font-weight: 600;
+}
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+/* Title Section */
+.title {
+  text-align: center;
+  padding: 40px 20px;
+  /* background: linear-gradient(to right, #007bff, #00c6ff); */
+  color:black;
+}
+
+.title h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Workout Cards Row */
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* Individual Card Styling */
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-content h4 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Button Styling */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+
+.nutrition {
+  text-align: center; /* Centers all text inside */
+}
+
+.v {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically if needed */
+  flex-direction: column; /* Ensures text appears in the next line */
+}
+.blog{
+  text-align:center;
+  background-image:url("Images/bb.jpg");
+  background-size: cover;
+}
+
+
+
+@media(max-width:700px)
+{
+  .text-box h1 {
+    font-size: 25px;
+  }
+  .nav-links ul li{
+    display: block;
+  }
+  .nav-links{
+    position: absolute;
+    background: #383434;
+    height:100vh;
+    width:200px;
+    top:0;
+    right:-200px;
+    text-align:left;
+    z-index: 2;
+  }
+    nav .fa {
+      display: block;
+      color:#fff;
+      margin:10px;
+      font-size:22px;
+      cursor:pointer;
+    }
+    .nav-links ul{
+      padding: 30px;
+    }
+
+  .fa-times {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 3;
+}
+
+.nav-links .fa-times {
+    display: block;
+}
+}
