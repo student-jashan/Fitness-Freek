@@ -34,46 +34,67 @@
     </div>
   </section>
 
-  <!-- Login Form (Initially Hidden) -->
-  <div id="loginForm" class="login-form">
-      <div class="login-container">
-          <span class="close-btn" onclick="closeLoginForm()">&times;</span>
+<!-- Login & Signup Popup -->
+<div id="loginPopup" class="popup">
+  <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+
+      <!-- Login Form -->
+      <div id="loginForm">
           <h2>Login</h2>
-          <form>
-              <label for="email">Email</label>
-              <input type="email" id="email" placeholder="Enter your email" required>
-              
-              <label for="password">Password</label>
-              <input type="password" id="password" placeholder="Enter your password" required>
-              
-              <button type="submit" class="btn">Login</button>
-          </form>
+          <select id="loginRole" onchange="toggleSignup()">
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+          </select>
+          <input type="email" id="loginEmail" placeholder="Enter Email" required>
+          <input type="password" id="loginPassword" placeholder="Enter Password" required>
+          <button onclick="login()">Login</button>
+          <p id="signupLink" class="small-text">Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+      </div>
+
+      <!-- Signup Form -->
+      <div id="signupForm" style="display: none;">
+          <h2>Sign Up</h2>
+          <input type="text" id="signupName" placeholder="Enter Name" required>
+          <input type="number" id="signupAge" placeholder="Enter Age" required>
+          <select id="signupGender">
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+          </select>
+          <input type="email" id="signupEmail" placeholder="Enter Email" required>
+          <input type="password" id="signupPassword" placeholder="Enter Password" required>
+          <button onclick="signup()">Sign Up</button>
+          <p class="small-text">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
       </div>
   </div>
+</div>
 
-  <script>
-    // Show Login Form
-    function showLoginForm() {
-        document.getElementById("loginForm").style.display = "flex";
-    }
-
-    // Close Login Form
-    function closeLoginForm() {
-        document.getElementById("loginForm").style.display = "none";
-    }
-  </script>
-
-<script>
-  var navLinks = document.getElementById("navLinks");
-
-  function showMenu() {
-      navLinks.style.right = "0";
+<!-- CSS for small text -->
+<style>
+  .small-text {
+      font-size: 12px;
   }
+</style>
 
-  function hideMenu() {
-      navLinks.style.right = "-200px";
+<!-- JavaScript for hiding signup when admin is selected -->
+<script>
+  function toggleSignup() {
+      var role = document.getElementById("loginRole").value;
+      var signupForm = document.getElementById("signupForm");
+      var signupLink = document.getElementById("signupLink");
+      
+      if (role === "admin") {
+          signupForm.style.display = "none";
+          signupLink.style.display = "none";
+      } else {
+          signupForm.style.display = "none";
+          signupLink.style.display = "block";
+      }
   }
 </script>
+
 
 
 
