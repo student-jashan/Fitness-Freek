@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Fitness Freek</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="myscripts.js" defer></script>
+</head>
+<body>
+    <div id="loginPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+
+            <!-- Login Form -->
+            <div id="loginForm">
+                <h2>Login</h2>
+                <select id="loginRole" onchange="toggleForms()">
+                    <option value="">Role</option>
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <input type="email" id="loginEmail" placeholder="Enter Email" required>
+                <input type="password" id="loginPassword" placeholder="Enter Password" required>
+                <button onclick="login()">Login</button>
+                <p class="small-text">Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signupForm" style="display: none;">
+                <h2>Sign Up</h2>
+                <input type="text" id="signupName" placeholder="Enter Name" required>
+                <input type="number" id="signupAge" placeholder="Enter Age" required>
+                <select id="signupGender">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="email" id="signupEmail" placeholder="Enter Email" required>
+                <input type="password" id="signupPassword" placeholder="Enter Password" required>
+                <button onclick="signup()">Sign Up</button>
+                <p class="small-text">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

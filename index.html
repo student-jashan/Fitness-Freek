@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Freak</title>
+    <title>Fitness Freek</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="myscripts.js"></script>
+    <script src="myscripts.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css"></link>
+        <link rel="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css"></link>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <section class="header">
-    <nav>
-      <div class="logo">
-        <a href="#">Fitness Freek</a>
-      </div>
-      <div class="nav-links" id="navLinks">
-        <i class="fa fa-times" onclick="hideMenu()"></i>
-        <ul>
-          <li><a href="#">HOME</a></li> 
-          <li><a href="#">WORKOUTS</a></li>
-          <li><a href="#">NUTRITION</a></li>    
-          <li><a href="#">BLOGS</a></li>
-          <a href="#" class="btn" onclick="showLoginForm()">LOG IN</a>
-        </ul>
-      </div>
-      <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
-    <div class="text-box">
-      <h1>Your Fitness Journey<br>Starts Here!</h1>
-      <a href="#" class="btn" onclick="showLoginForm()">Get Started</a>
-    </div>
-  </section>
+    <section class="header">
+        <nav>
+            <div class="logo">
+                <a href="#">Fitness Freak</a>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#">HOME</a></li> 
+                    <li><a href="#">WORKOUTS</a></li>
+                    <li><a href="#">NUTRITION</a></li>    
+                    <li><a href="#">BLOGS</a></li>
+                    <!-- <li><a href="login.html" class="btn">LOG IN</a></li> -->
+                    <a href="#" class="btn" onclick="showLoginForm()">LOG IN</a>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Your Fitness Journey<br>Starts Here!</h1>
+            <a href="login.html" class="btn">Get Started</a>
+        </div>
+    </section>
 
 <!-- Login & Signup Popup -->
 <div id="loginPopup" class="popup">
@@ -70,34 +71,6 @@
       </div>
   </div>
 </div>
-
-<!-- CSS for small text -->
-<style>
-  .small-text {
-      font-size: 12px;
-  }
-</style>
-
-<!-- JavaScript for hiding signup when admin is selected -->
-<script>
-  function toggleSignup() {
-      var role = document.getElementById("loginRole").value;
-      var signupForm = document.getElementById("signupForm");
-      var signupLink = document.getElementById("signupLink");
-      
-      if (role === "admin") {
-          signupForm.style.display = "none";
-          signupLink.style.display = "none";
-      } else {
-          signupForm.style.display = "none";
-          signupLink.style.display = "block";
-      }
-  }
-</script>
-
-
-
-
 
 <!-- Workout -->
 <section class="title">
@@ -152,29 +125,44 @@
 
   </div>
 </section>
-<!-- Nutrition -->
+<!-- Nutrition Section -->
 <section class="nutrition">
   <h1>Nutrition Plans</h1>
   <div class="nutrition-content">
+      <!-- Weight Loss Plan -->
       <div class="nutrition-card">
           <img src="Images/kkt.webp" alt="Healthy Meal">
           <div class="nutrition-card-content">
               <h4>Weight Loss Plan</h4>
               <p>Track your calorie intake and maintain a balanced diet.</p>
-              <a href="#" class="nutrition-btn">Learn More</a>
+              <a href="#" class="nutrition-btn" onclick="showDetails('weightLoss')">Learn More</a>
           </div>
       </div>
 
+      <!-- Muscle Gain Plan -->
       <div class="nutrition-card">
           <img src="Images/proy.jpg" alt="Protein Diet">
           <div class="nutrition-card-content">
               <h4>Muscle Gain Plan</h4>
               <p>High-protein meals tailored for muscle growth.</p>
-              <a href="#" class="nutrition-btn">Learn More</a>
+              <a href="#" class="nutrition-btn" onclick="showDetails('muscleGain')">Learn More</a>
           </div>
       </div>
   </div>
 </section>
+
+<!-- Hidden Nutrition Details (Pop-up or Expandable) -->
+<div id="nutritionDetails" class="nutrition-popup" style="display: none;">
+  <div class="nutrition-popup-content">
+      <span class="close-btn" onclick="closeDetails()">&times;</span>
+      <div id="nutritionInfo"></div>
+  </div>
+</div>
+
+
+
+<!-- CSS (Add this in styles.css) -->
+
 
 
 <!-- Blogs -->
@@ -291,7 +279,7 @@
 <footer class="footer">
   <div class="container">
       <div class="footer-content">
-          <h2>Fitness Freek</h2>
+          <h2>Fitness Freak</h2>
           <p>Your one-stop destination for fitness and wellness.</p>
           <div class="social-icons">
               <a href="#"><i class="fa fa-facebook"></i></a>
@@ -302,7 +290,7 @@
       <div class="footer-links">
           
       </div>
-      <p class="copyright">&copy; 2025 Fitness Freek. All rights reserved.</p>
+      <p class="copyright">&copy; 2025 Fitness Freak. All rights reserved.</p>
   </div>
 </footer>
 

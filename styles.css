@@ -689,3 +689,170 @@ button {
 button:hover {
   background: darkblue;
 }
+
+
+
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 350px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #323538;
+}
+
+button {
+  background-color: #323538;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #444547;
+}
+
+.small-text {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.small-text a {
+  color: #323538;
+  text-decoration: none;
+}
+
+.small-text a:hover {
+  text-decoration: underline;
+}
+
+#signupForm {
+  display: none;
+}
+/* Popup Container */
+.nutrition-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 500px;
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Popup Content */
+.nutrition-popup-content {
+  text-align: left;
+  position: relative;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ff6600;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #cc5500;
+}
+
+/* Detailed Information Styling */
+#nutritionInfo {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+#nutritionInfo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ff6600;
+}
+
+#nutritionInfo p {
+  margin-bottom: 15px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translate(-50%, -55%);
+  }
+  to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+  }
+}
+
+/* Overlay (Background when Popup is Open) */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nutrition-popup {
+      width: 90%;
+  }
+}
